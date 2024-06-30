@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример с циклом for и прорисовкой линий</title>
+</head>
+<body>
+    <h1>Пример простой</h1>
+    <script language="JavaScript" type="text/JavaScript">
+        function drawLine(length) {
+            document.writeln("<hr align='center' width='" + length + "'>");
+        }
+
+        var lineLength = 10;
+        for (var i = 0; i < 10; i++) {
+            drawLine(lineLength + "px");
+            lineLength += 10;
+        }
+    </script>
+</body>
+</html>
