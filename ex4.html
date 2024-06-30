@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример с условиями и вводом пароля</title>
+</head>
+<body>
+    <script language="JavaScript" type="text/JavaScript">
+        var x, y;
+        x = parseInt(prompt("Введите значение x", ''));
+        y = parseInt(prompt("Введите значение y", ''));
+        if (x < y) {
+            alert("Максимальное число - y");
+        } else if (x > y) {
+            alert("Максимальное число - x");
+        } else {
+            alert("Введенные числа равны!");
+        }
+
+        var password = "1234"; // Правильный пароль
+        var userPassword = prompt("Введите пароль", "");
+        if (userPassword === password) {
+            alert("Пароль верен!");
+        } else {
+            alert("Неправильно введен пароль!");
+        }
+    </script>
+</body>
+</html>
