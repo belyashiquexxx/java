@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Форма заполнения данных</title>
+<style>
+form {
+max-width: 600px;
+margin: 0 auto;
+padding: 1em;
+border: 1px solid #ccc;
+border-radius: 1em;
+}
+div + div {
+margin-top: 1em;
+}
+label {
+display: block;
+margin-bottom: 0.5em;
+}
+input, textarea {
+width: 100%;
+padding: 0.5em;
+border: 1px solid #ccc;
+border-radius: 0.5em;
+}
+input[type="submit"], input[type="reset"] {
+width: auto;
+padding: 0.7em;
+margin-top: 1em;
+}
+</style>
+</head>
+<body>
+<form id="dataForm" onsubmit="return validateForm()">
+<div>
+<label for="name">Ваше имя: *</label>
+<input type="text" id="name" name="name" required>
+</div>
+<div>
+<label for="password">Пароль: *</label>
+<input type="password" id="password" name="password" required>
+</div>
+<div>
+<label for="confirmPassword">Подтверждение пароля: *</label>
+<input type="password" id="confirmPassword" name="confirmPassword" required>
+</div>
+<div>
+<label for="email">Электронный адрес: *</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div>
+<label for="subject">Тема сообщения:</label>
+<input type="text" id="subject" name="subject">
+</div>
+<div>
+<label for="message">Сообщение:</label>
+<textarea id="message" name="message" rows="4"></textarea>
+</div>
+<div>
+<input type="submit" value="Отправить">
+<input type="reset" value="Очистить">
+</div>
+</form>
+<script>
+function validateForm() {
+var name = document.getElementById('name');
+var password = document.getElementById('password');
+var confirmPassword = document.getElementById('confirmPassword');
+var email = document.getElementById('email');
+var message = document.getElementById('message');
+if (name.value.trim() == '') {
+alert('Пожалуйста, заполните поле имени.');
+name.focus();
+return false;
+}
+if (password.value.trim().length <= 4) {
+alert('Пароль должен содержать больше 4-х символов.');
+password.focus();
+return false;
+}
+if (password.value !== confirmPassword.value) {
+alert('Пароли не совпадают.');
+confirmPassword.focus();
+return false;
+}
+if (email.value.trim() == '' || !email.value.includes('@')) {
+alert('Пожалуйста, введите корректный электронный адрес.');
+email.focus();
+return false;
+}
+if (message.value.trim().length <= 10) {
+alert('Сообщение должно содержать больше 10 символов.');
+message.focus();
+return false;
+}
+return true;
+}
+</script>
+</body>
+</html>
