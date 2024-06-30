@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Упражнение 20</title>
+<style>
+body {
+margin: 0;
+overflow: hidden;
+}
+</style>
+</head>
+<body>
+<div>
+<img id="imgid1" src="img2.gif" alt="">
+</div>
+<div>
+<img id="imgid2" src="image2.gif" alt="">
+</div>
+<div>
+<img id="imgid3" src="img3.gif" alt="">
+</div>
+<script>
+var image1 = document.getElementById("imgid1");
+image1.style.left = "1000px";
+image1.style.top = "80px";
+image1.style.position = "absolute";
+var image2 = document.getElementById("imgid2");
+image2.style.left = "0px";
+image2.style.top = "100px";
+image2.style.position = "absolute";
+var image3 = document.getElementById("imgid3");
+image3.style.left = "40px";
+image3.style.top = "80px";
+image3.style.position = "absolute";
+function moveImage() {
+var position = parseInt(image2.style.left);
+position += 2; 
+if (position > window.innerWidth) {
+position = -image2.width; 
+}
+image2.style.left = position + "px";
+requestAnimationFrame(moveImage);
+}
+moveImage();
+</script>
+</body>
+</html>
