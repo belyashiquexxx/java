@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример HTML-документа №3</title>
+    <script>
+        let name = prompt('Введите сюда своё имя', 'Введите имя');
+        if (name != null) {
+            document.write('Ваше имя: ' + name);
+            let restart = confirm('Начать заново?');
+            if (restart) {
+                let response = confirm('Не надоело?');
+                if (response) {
+                    alert('Отлично! Продолжайте!');
+                } else {
+                    alert('Ну и правильно!');
+                }
+            } else {
+                alert('До свидания!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Здесь можно добавить контент по вашему желанию -->
+</body>
+</html>
