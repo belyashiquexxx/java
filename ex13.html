@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Увеличение и уменьшение изображения</title>
+    <style>
+        .resize-image {
+            transition: transform 0.3s;
+        }
+    </style>
+    <script>
+        function enlargeImage() {
+            document.getElementById("image").style.transform = "scale(1.2)";
+        }
+
+        function reduceImage() {
+            document.getElementById("image").style.transform = "scale(1)";
+        }
+    </script>
+</head>
+<body>
+    <h1>Увеличение и уменьшение изображения:</h1>
+    <img id="image" src="image.jpg" class="resize-image" onmouseover="enlargeImage()" onmouseout="reduceImage()" />
+</body>
+</html>
