@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ссылки с эффектами</title>
+    <script>
+        function confirmDownload() {
+            var download = confirm("Для загрузки документа требуется программа Acrobat. Хотите продолжить?");
+            if (download) {
+                // здесь можно добавить функциональность для загрузки PDF
+            }
+        }
+    </script>
+    <style>
+        .red-background {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ссылки:</h1>
+    <a href="file.pdf" onclick="confirmDownload()">Скачать PDF</a>
+    <br>
+    <a href="#" onmouseover="document.body.classList.add('red-background')" onmouseout="document.body.classList.remove('red-background')">Изменение цвета фона</a>
+</body>
+</html>
