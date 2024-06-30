@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Задание 19</title>
+<script language="JavaScript">
+function moveTxt() {
+	var anil = document.getElementById("anil")
+	var top = parseInt(anil.style.top)
+	var left = parseInt(anil.style.left)
+	if (top < 500 || left > 750) {
+                top += 2
+                anil.style.top = top + "px"
+		left -= 3
+		anil.style.left = left + "px"
+                setTimeout(moveTxt, 50)
+            }
+        }
+</script>
+</head>
+<body onLoad="moveTxt()">
+<div id="anil" style="position:absolute; left:1500px; top:10px;">
+Текст, шагом марш!
+</div>
+</body>
+</html>
